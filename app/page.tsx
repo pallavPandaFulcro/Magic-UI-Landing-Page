@@ -125,8 +125,8 @@ export default function Home() {
         <section className="p-8">
           <div className="flex justify-evenly gap-24  items-center">
             <SparklesText text="Magic UI" />
-            <NavigationMenu>
-              <NavigationMenuList>
+            <NavigationMenu className="md:hidden">
+              <NavigationMenuList >
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Check Details</NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -220,9 +220,9 @@ export default function Home() {
         <section className="p-8">
           <div>
             <WordPullUp words="Service" className="" />
-            <div className="flex  justify-evenly gap-10 mt-8 text-start">
+            <div className="flex flex-col md:flex-row justify-evenly gap-10 mt-8 text-start">
               <WordPullUp
-                className="w-1/3 text-2xl text-wrap  justify-start"
+                className=" w-full md:w-1/3 text-2xl text-wrap  justify-start"
                 words=" Magic UI is a comprehensive UI library designed for building
                 responsive, modern web applications with minimal effort. It
                 offers a wide range of customizable components, including
@@ -233,7 +233,7 @@ export default function Home() {
                 capabilities, allowing for seamless customization of styles to
                 match project-specific design requirements."
               />
-              <div className="relative flex h-full w-2/3 max-w-[32rem] items-center justify-center overflow-hidden rounded-lg bg-background  ">
+              <div className="relative flex h-full w-full md:w-2/3 max-w-[32rem] items-center justify-center overflow-hidden rounded-lg bg-background  ">
                 <IconCloud iconSlugs={slugs} />
               </div>
             </div>
@@ -245,35 +245,35 @@ export default function Home() {
           className="flex  w-full flex-col gap-4  mt-8 mb-8 p-8 "
         >
           <WordPullUp words="Projects" />
-          <div className="flex  w-full flex-col gap-4 lg:h-[280px] lg:flex-row lg:flex-wrap  justify-center   ">
+          <div className="flex  w-full flex-col gap-4  lg:h-[280px] lg:flex-row lg:flex-wrap  justify-center">
             <MagicCard
-              className="cursor-pointer w-80 flex-col items-center justify-center shadow-2xl whitespace-nowrap text-3xl"
+              className="cursor-pointer w-full h-[240px] md:h-full md:w-80 flex-col items-center justify-center shadow-2xl whitespace-nowrap text-3xl"
               gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
             >
               Project 1
             </MagicCard>
             <MagicCard
-              className="cursor-pointer w-80 flex-col items-center justify-center shadow-2xl whitespace-nowrap text-3xl"
+              className="cursor-pointer w-full h-[240px] md:h-full  md:w-80 flex-col items-center justify-center shadow-2xl whitespace-nowrap text-3xl"
               gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
             >
               Project 2
             </MagicCard>
             <MagicCard
-              className=" relative w-80 cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-3xl"
+              className=" relative w-full h-[240px] md:h-full md:w-80 cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-3xl"
               gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
             >
               <Meteors number={50} />
               Project 3
             </MagicCard>
             <MagicCard
-              className=" relative w-80 cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-3xl"
+              className=" relative w-full h-[240px] md:h-full  md:w-80 cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-3xl"
               gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
             >
               <Meteors number={50} />
               Project 4
             </MagicCard>
             <MagicCard
-              className="cursor-pointer flex-col w-80 items-center justify-center shadow-2xl whitespace-nowrap text-3xl"
+              className="cursor-pointer flex-col w-full  h-[240px] md:h-full md:w-80 items-center justify-center shadow-2xl whitespace-nowrap text-3xl"
               gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
             >
               Project 5
@@ -295,7 +295,7 @@ export default function Home() {
             ))}
           </div>
         </section>
-        <section id="Data" className="p-52 h-[300px] ">
+        <section id="Data" className="md:p-52 h-[300px] w-full">
           <BlurIn word="Testimonials" />
           <Carousel className="w-full ">
             <CarouselContent>
