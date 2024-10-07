@@ -4,7 +4,7 @@ import BlurIn from "@/components/magicui/blur-in";
 import IconCloud from "@/components/magicui/icon-cloud";
 import { RainbowButton } from "@/components/magicui/rainbow-button";
 import WordPullUp from "@/components/magicui/word-pull-up";
-// import ShimmerButton from "@/components/magicui/shimmer-button";
+
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import Meteors from "@/components/magicui/meteors";
@@ -17,12 +17,7 @@ import HyperText from "@/components/magicui/hyper-text";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -77,12 +72,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
+import { HoverCard, HoverCardTrigger } from "@/components/ui/hover-card";
 import React from "react";
+import Image from "next/image";
 const images = Array.from({ length: 15 }, (_, i) => {
   const isLandscape = i % 2 === 0;
   const width = isLandscape ? 800 : 600;
@@ -205,16 +197,6 @@ export default function Home() {
         </section>
         <section id="heroSection" className="p-8">
           <div className=" h-[750px] rounded-lg w-full bg-background overflow-hidden ">
-            {/* <FlickeringGrid
-            className="z-0 absolute inset-0 size-full"
-            squareSize={8}
-            gridGap={10}
-            color="#ffb9b9"
-            maxOpacity={0.5}
-            flickerChance={0.1}
-            height={1080}
-            width={1920}
-          /> */}
             <Particles
               className="absolute inset-0"
               quantity={3000}
@@ -222,26 +204,7 @@ export default function Home() {
               color={color}
               refresh
             />
-            <div className="flex flex-col justify-center items-center mt-60  ">
-              {/* <BoxReveal boxColor={"#ff6e89"} duration={0.5}>
-              <p className="text-[3.5rem] font-semibold">
-                Magic UI<span className="text-[#ffb9b9]">.</span>
-              </p>
-            </BoxReveal>
-
-            <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-              <h2 className="mt-[.5rem] text-[1rem]">
-                UI library for{" "}
-                <span className="text-[#f7ea35]">Design Engineers</span>
-              </h2>
-            </BoxReveal>
-
-            <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-              <ShinyButton
-                text="Explore Now"
-                className="bg-red-200 mt-8"
-              />
-            </BoxReveal> */}
+            <div className="flex flex-col justify-center items-center mt-44  ">
               <WordPullUp
                 className="text-2xl font-bold tracking-[-0.02em] text-black dark:text-white md:text-7xl md:leading-[5rem] mb-12"
                 words="Empower Your Projects with Magic UI"
@@ -251,23 +214,9 @@ export default function Home() {
                 text=" Discover the ease of creating stunning, responsive web
                 applications with Magic UI."
               />
-              {/* <WordPullUp
-              className="text-2xl font-bold tracking-[-0.02em] text-black dark:text-white md:text-7xl md:leading-[5rem] mb-8"
-              words="Smooth And Latest Web Applications"
-            />
-            <WordPullUp
-              className="text-xl font-bold tracking-[-0.02em] text-black dark:text-white md:text-7xl md:leading-[5rem]"
-              words="Lets dive into future of UI"
-            /> */}
             </div>
           </div>
         </section>
-
-        {/* <VelocityScroll
-      text="Velocity Scroll"
-      default_velocity={5}
-      className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem]"
-    /> */}
         <section className="p-8">
           <div>
             <WordPullUp words="Service" className="" />
@@ -290,12 +239,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* <div className="z-10 flex min-h-[20rem] items-center justify-center rounded-lg  bg-white dark:bg-blue-500">
-          <TextReveal
-            text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal dist',and a search for 'lorem ipsum' will uncover many web sites still in their infancy."
-            className="line-height-20"
-          />
-        </div> */}
+
         <section
           id="Projects"
           className="flex  w-full flex-col gap-4  mt-8 mb-8 p-8 "
@@ -334,36 +278,6 @@ export default function Home() {
             >
               Project 5
             </MagicCard>
-            {/* <MagicCard
-              className="cursor-pointer flex-col w-80 items-center justify-center shadow-2xl whitespace-nowrap text-3xl"
-              gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
-            >
-              Project 6
-            </MagicCard>
-            <MagicCard
-              className="cursor-pointer flex-col w-80 items-center justify-center shadow-2xl whitespace-nowrap text-3xl"
-              gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
-            >
-              Project 7
-            </MagicCard>
-            <MagicCard
-              className="cursor-pointer flex-col w-80 items-center justify-center shadow-2xl whitespace-nowrap text-3xl"
-              gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
-            >
-              Project 8
-            </MagicCard>
-            <MagicCard
-              className="cursor-pointer flex-col w-80 items-center justify-center shadow-2xl whitespace-nowrap text-3xl"
-              gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
-            >
-              Project 9
-            </MagicCard>
-            <MagicCard
-              className="cursor-pointer flex-col w-80 items-center justify-center shadow-2xl whitespace-nowrap text-3xl"
-              gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
-            >
-              Project 10
-            </MagicCard> */}
           </div>
         </section>
         <section id="photos" className="flex flex-col mt-80 p-8 ">
@@ -375,16 +289,17 @@ export default function Home() {
                   className="mb-4 size-full rounded-lg object-contain"
                   src={imageUrl}
                   alt={`Random stock image ${idx + 1}`}
+                 
                 />
               </BlurFade>
             ))}
           </div>
         </section>
-        <section id="Data" className="p-40 h-[300px] ">
-          <BlurIn word="Testimonials"/>
-          <Carousel className="w-full">
+        <section id="Data" className="p-52 h-[300px] ">
+          <BlurIn word="Testimonials" />
+          <Carousel className="w-full ">
             <CarouselContent>
-              <CarouselItem className=" w-full h-[200px]">
+              <CarouselItem className=" w-full h-[280px]">
                 <BlurFade>
                   <div className="p-1">
                     <div className=" text-center">
@@ -413,14 +328,14 @@ export default function Home() {
                       </div>
                       <div>
                         <div className="mt-8">
-                          <img
+                          <Image
                             alt="MicroSoft Logo"
                             loading="lazy"
                             width="0"
                             height="40"
                             decoding="async"
                             data-nimg="1"
-                            className="mx-auto w-auto h-[40px] grayscale opacity-30"
+                            className="mx-auto w-auto h-[30px] grayscale opacity-30"
                             src="https://cdn.magicui.design/companies/Microsoft.svg"
                           />
                         </div>
@@ -472,14 +387,14 @@ export default function Home() {
                       </div>
                       <div>
                         <div className="mt-8">
-                          <img
+                          <Image
                             alt="Amazon Logo"
                             loading="lazy"
                             width="0"
                             height="40"
                             decoding="async"
                             data-nimg="1"
-                            className="mx-auto w-auto h-[40px] grayscale opacity-30"
+                            className="mx-auto w-auto h-[30px] grayscale opacity-30"
                             src="https://cdn.magicui.design/companies/Amazon.svg"
                           />
                         </div>
@@ -530,14 +445,14 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="mt-8">
-                        <img
+                        <Image
                           alt="Amazon Logo"
                           loading="lazy"
                           width="0"
                           height="40"
                           decoding="async"
                           data-nimg="1"
-                          className="mx-auto w-auto h-[40px] grayscale opacity-30"
+                          className="mx-auto w-auto h-[30px] grayscale opacity-30"
                           src="https://cdn.magicui.design/companies/Amazon.svg"
                         />
                       </div>
@@ -588,14 +503,14 @@ export default function Home() {
                       </div>
                       <div>
                         <div className="mt-8">
-                          <img
+                          <Image
                             alt="MicroSoft Logo"
                             loading="lazy"
                             width="0"
-                            height="40"
+                            height='60'
                             decoding="async"
                             data-nimg="1"
-                            className="mx-auto w-auto h-[40px] grayscale opacity-30"
+                            className="mx-auto w-auto h-[30px] grayscale opacity-30"
                             src="https://cdn.magicui.design/companies/Microsoft.svg"
                           />
                         </div>
@@ -624,7 +539,7 @@ export default function Home() {
             <CarouselNext />
           </Carousel>
         </section>
-   
+
         <div
           data-state="active"
           data-orientation="horizontal"
@@ -635,16 +550,13 @@ export default function Home() {
           className="mt-40 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 w-full overflow-hidden border-t bg-gray-200"
         >
           <div className="w-full overflow-x-auto">
-            <footer className="mx-auto max-w-7xl space-y-8 px-4 pt-16 text-xs font-medium text-muted-foreground">
+            <footer className="mx-auto max-w-7xl space-y-8 px-16 pt-16  text-xs font-medium text-muted-foreground">
               <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
                 <nav className="flex flex-col items-start space-y-2.5 md:space-y-1.5">
                   <h3 className="mb-2 font-semibold uppercase tracking-wide text-foreground">
                     Products
                   </h3>
 
-                  {/* <a href="#" className="transition hover:text-foreground">
-                    Todo List
-                  </a> */}
                   <HoverCard>
                     <HoverCardTrigger>Todo List</HoverCardTrigger>
                   </HoverCard>
